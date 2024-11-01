@@ -28,7 +28,7 @@ The user is responsible for any consequences that may arise from using this scri
 
 def bruteforce_directory(site):
     for length in range(1, 50):
-        for word in ascii_lowercase ** length:
+        for word in ascii_lowercase[:length].__iter__().__class__():
             full_word = site + "/" + word
             try:
                 requests.get(full_word).raise_for_status()
